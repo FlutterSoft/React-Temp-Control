@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Temperature from './Temperature'
+import Button from './Button'
+import {useState} from 'react'
 function App() {
+  
+  const [temp, setTemp] = useState(24)
+  function handleIncrement(){
+    setTemp( (prevState) => prevState + 1 )
+  }
+  function handleDecrement(){
+    setTemp( (prevState) => prevState - 1 )
+  }   
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="Card">
+        <Temperature temp={temp} />
+        <div className="Button-Container">
+          <Button message="-" color="#A3E7FC" setTemp={setTemp} handleClick={handleDecrement}/>
+          <Button message="+" color="#D33F49" setTemp={setTemp} handleClick={handleIncrement}/>          
+        </div>
+
+      </div>
     </div>
   );
 }

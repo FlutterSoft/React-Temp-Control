@@ -3,14 +3,17 @@ import Temperature from './Temperature'
 import Button from './Button'
 import {useState} from 'react'
 function App() {
-  
+  // State
   const [temp, setTemp] = useState(24)
+  
+  // Functions
   function handleIncrement(){
     setTemp( (prevState) => prevState + 1 )
   }
   function handleDecrement(){
     setTemp( (prevState) => prevState - 1 )
   }   
+  
 
   return (
     <div className="App">

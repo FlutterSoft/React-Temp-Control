@@ -1,8 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
 
 function Button( {message, color, handleClick} ){
-
     return(
         <button 
             className="Button"
